@@ -15,7 +15,7 @@ This is a project template Chinmay uses for his C++ projects.
 ## Building
 
 > [!IMPORTANT]
-> Make sure you have completed all pre-requisites.
+> Make sure you have completed all [pre-requisites](#prerequisites).
 
 This project uses the CMake build system but use Make for tasks. Using Make is optional but makes things easier.
 
