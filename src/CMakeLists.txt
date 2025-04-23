@@ -11,26 +11,14 @@ configure_file(fixtures_location.h.in fixtures_location.h @ONLY)
 # Unittests
 add_executable(new_cpp_project_tests
   unittests.cc
+  ${CMAKE_CURRENT_BINARY_DIR}/fixtures_location.h
 )
 target_link_libraries(new_cpp_project_tests
   new_cpp_project
-  gtest_main
+  GTest::gtest_main
 )
 target_include_directories(new_cpp_project_tests
   PUBLIC
     ${CMAKE_CURRENT_BINARY_DIR}
 )
 gtest_discover_tests(new_cpp_project_tests)
-
-# Benchmarks
-add_executable(new_cpp_project_benchmarks
-  benchmarks.cc
-)
-target_link_libraries(new_cpp_project_benchmarks
-  new_cpp_project
-  benchmark::benchmark
-)
-target_include_directories(new_cpp_project_benchmarks
-  PUBLIC
-    ${CMAKE_CURRENT_BINARY_DIR}
-)
