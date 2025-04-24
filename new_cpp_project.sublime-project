@@ -2,7 +2,7 @@
   "build_systems": [
     {
       "name": "new_cpp_project Build All",
-      "shell_cmd": "make test",
+      "shell_cmd": "make",
       "working_dir": "${project_path}",
       "file_regex": "(.*):(\\d+):(\\d+)(.*)",
       "shell": true,
