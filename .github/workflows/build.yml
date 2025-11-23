@@ -16,6 +16,8 @@ jobs:
     steps:
     - uses: actions/checkout@v4
     - uses: extractions/setup-just@v3
+    - name: Setup VCPKG
+      uses: lukka/run-vcpkg@v11
     - name: Pull Dependencies
       run: just sync
     - name: Generate Build Directory
