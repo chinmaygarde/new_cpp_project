@@ -23,7 +23,11 @@ This project uses the CMake build system but use `just` for tasks. Using `just` 
   ```sh
   just sync
   ```
+* Generate the default build directory.
+  ```sh
+  just setup
+  ```
 * Build the default CMake preset.
   ```sh
-  just
+  just build
   ```
