@@ -7,7 +7,7 @@ This is a project template Chinmay uses for his C++ projects.
 * CMake (3.22 or above).
 * Git.
 * Ninja.
-* Make.
+* [Just](https://just.systems/), a task runner.
 * A C11 and C++20 compiler.
 * [vcpkg](https://vcpkg.io/en/index.html) for package management.
   * Ensure that the `VCPKG_ROOT` environment variable is present and valid.
@@ -17,13 +17,13 @@ This is a project template Chinmay uses for his C++ projects.
 > [!IMPORTANT]
 > Make sure you have completed all [pre-requisites](#prerequisites).
 
-This project uses the CMake build system but use Make for tasks. Using Make is optional but makes things easier.
+This project uses the CMake build system but use `just` for tasks. Using `just` is optional but makes things easier.
 
 * Fetch all submodules.
   ```sh
-  make sync
+  just sync
   ```
 * Build the default CMake preset.
   ```sh
-  make
+  just
   ```
