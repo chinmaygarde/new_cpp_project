@@ -15,6 +15,7 @@ jobs:
         os: [macos-latest]
     steps:
     - uses: actions/checkout@v4
+    - uses: extractions/setup-just@v3
     - name: Pull Dependencies
       run: just sync
     - name: Generate Build Directory
