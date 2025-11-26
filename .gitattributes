@@ -1,1 +1,2 @@
-third_party/* linguist-vendored
+assets/** linguist-vendored
+third_party/** linguist-vendored
