@@ -1,6 +1,6 @@
 # A New C++ Project
 
-This is a project template Chinmay uses for his C++ projects.
+This is a project template Chinmay uses for his C++ projects. Clone this repository template and replace the occurrences of `new_cpp_project` to get started.
 
 ## Prerequisites
 
