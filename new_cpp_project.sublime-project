@@ -21,7 +21,6 @@
       "clangd":
       {
         "initializationOptions" : {
-          "binary": "system",
           "clangd.compile-commands-dir": "build",
           "clangd.background-index": true,
           "clangd.header-insertion": "never",
