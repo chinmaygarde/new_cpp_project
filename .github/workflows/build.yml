@@ -16,6 +16,10 @@ jobs:
         os: [macos-latest, ubuntu-latest]
     steps:
     - uses: actions/checkout@v4
+    - name: Setup CCache
+      uses: hendrikmuhs/ccache-action@v1.2
+      with:
+        key: ${{ github.job }}-${{ runner.os }}
     - uses: extractions/setup-just@v3
     - name: Setup VCPKG
       uses: lukka/run-vcpkg@v11
@@ -23,7 +27,7 @@ jobs:
         VCPKG_BINARY_SOURCES: default,rw
     # Cache vcpkg binary sources.
     # Adapted from https://github.com/lukka/run-vcpkg/issues/251
-    - name: Set up binary cache
+    - name: Setup VCPKG Cache
       uses: actions/cache@v4
       with:
         path: ${{ env.VCPKG_DEFAULT_BINARY_CACHE }}
