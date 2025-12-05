@@ -13,6 +13,8 @@ EnableCCache()
 
 project(new_cpp_project)
 
+AddRecommendedWarningFlags()
+
 enable_testing()
 
 include(GoogleTest)
