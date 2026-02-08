@@ -5,7 +5,11 @@
 
 version: 2
 updates:
-  - package-ecosystem: "vcpkg" # See documentation for possible values
-    directory: "/" # Location of package manifests
+  - package-ecosystem: vcpkg
+    directory: /
     schedule:
-      interval: "monthly"
+      interval: monthly
+  - package-ecosystem: github-actions
+    directory: /
+    schedule:
+      interval: monthly
