@@ -2,5 +2,8 @@
   "name": "C++ DevContainer",
   "build": {
     "dockerfile": "Dockerfile"
-  }
+  },
+  "mounts": [
+    "target=${containerWorkspaceFolder}/build,type=volume"
+  ]
 }
