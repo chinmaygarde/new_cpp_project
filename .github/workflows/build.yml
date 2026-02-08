@@ -13,20 +13,25 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        os: [macos-latest, ubuntu-latest]
+        os:
+          - ubuntu-24.04
+          - macos-26
     steps:
     - uses: actions/checkout@v4
+
     - name: Setup CCache
       uses: hendrikmuhs/ccache-action@v1.2
       with:
         key: ${{ github.job }}-${{ runner.os }}
-    - uses: extractions/setup-just@v3
+
+    - name: Setup Just
+      uses: extractions/setup-just@v3
+
     - name: Setup VCPKG
       uses: lukka/run-vcpkg@v11
       env:
         VCPKG_BINARY_SOURCES: default,rw
-    # Cache vcpkg binary sources.
-    # Adapted from https://github.com/lukka/run-vcpkg/issues/251
+
     - name: Setup VCPKG Cache
       uses: actions/cache@v4
       with:
@@ -34,9 +39,15 @@ jobs:
         key: ${{ runner.os }}-vcpkg-binary-cache-${{ hashFiles('vcpkg*.json') }}
         restore-keys: |
             ${{ runner.os }}-vcpkg-binary-cache-
+
     - name: Pull Dependencies
-      run: just sync
+      run: just --no-deps sync
+
     - name: Generate Build Directory
-      run: just setup release
+      run: just --no-deps setup
+
     - name: Build with CMake
-      run: just build release
+      run: just --no-deps build
+
+    - name: Test
+      run: just --no-deps test
