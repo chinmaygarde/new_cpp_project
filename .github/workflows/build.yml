@@ -25,7 +25,7 @@ jobs:
         key: ${{ github.job }}-${{ runner.os }}
 
     - name: Setup Just
-      uses: extractions/setup-just@v3
+      uses: extractions/setup-just@v4
 
     - name: Setup VCPKG
       uses: lukka/run-vcpkg@v11
